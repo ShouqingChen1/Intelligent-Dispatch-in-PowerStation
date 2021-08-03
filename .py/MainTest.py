@@ -48,20 +48,19 @@ qout = np.nan*np.ones([MM,A[1]])
 hout = np.nan*np.ones([MM,A[1]])
 fout =  np.nan*np.ones([MM,A[1]])
 
-j = 1
 for i in range(MM):
     print(i)
     Q = QT[i,1]
     T = QT[i,2]
     if 1%T != 0:
         hdown = interpolate.interp1d(QH[:0],QH[:1],kind='linear',fill_value='extrapolate',)(Q) # https://www.codenong.com/8215419/
-        out[j,:],qout[j,:],hout[j,:],fout[j,:] = main_opt( Q,hup,hdown,A,Tur,U,QH)
-        j=j+1;
+        out[i,:],qout[i,:],hout[i,:],fout[i,:] = main_opt( Q,hup,hdown,A,Tur,U,QH)
+
 
 P = np.nansum(out,1)
-e = np.multiply(P,QT[:,1])
+e=P*QT[:,1]
 E = np.nansum(e)
-HQUAN = np.nansum(np.multiply(np.nansum(np.multiply(out,hout),1),QT[:,1]))/E
-FQUAN = np.nansum(np.multiply(np.nansum(np.multiply(out,fout),1),QT[:,1]))/E
+HQUAN=np.nansum(np.nansum(out*hout,1)*QT[:,1])/E
+FQUAN=np.nansum(np.nansum(out*fout,1)*QT[:,1])/E
 maxp = max(P)
 
