@@ -10,4 +10,4 @@
 上述数学模型为非线性规划模型，本文采用神经网络及动态规划算法工具对模型进行求解。
 动态规划基本方程为[3]：
  ![image](https://github.com/ShouqingChen1/Dynamic-Simulation-Method-for-Hydropower-Station-Water-Energy-Calculation-and-Unit-Selection/blob/master/ImagesFolderforReadme/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E5%9F%BA%E6%9C%AC%E6%96%B9%E7%A8%8B.png)
-式中opt根据模型取max， 表示阶段![image](https://github.com/ShouqingChen1/Dynamic-Simulation-Method-for-Hydropower-Station-Water-Energy-Calculation-and-Unit-Selection/blob/master/ImagesFolderforReadme/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E5%9F%BA%E6%9C%AC%E6%96%B9%E7%A8%8B.png)变量，即第 台水轮机； 表示 阶段状态变量，即 阶段剩余发电可引用流量； 表示第 阶段的初始状态为 ，从 阶段到M阶段所得到的最大值； 表示第 阶段处于状态 时的决策变量，即第 台水轮机的引用流量； 表示状态转移方程， 表示第 阶段的阶段指标，即第 台水轮机的功率。 由状态 所确定的第 阶段的允许决策集合。
+式中opt根据模型取max， 表示阶段变量，即第 台水轮机； 表示 阶段状态变量，即 阶段剩余发电可引用流量； 表示第 阶段的初始状态为 ，从 阶段到M阶段所得到的最大值； 表示第 阶段处于状态 时的决策变量，即第 台水轮机的引用流量； 表示状态转移方程， 表示第 阶段的阶段指标，即第 台水轮机的功率。 由状态 所确定的第 阶段的允许决策集合。
